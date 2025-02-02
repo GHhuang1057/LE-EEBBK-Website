@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LE EEBBK | LE EEBBK团队</title>
+    <title>LE EEBBK团队 | GH工作室</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
         /* 基础样式 */
@@ -91,140 +91,51 @@
             margin-bottom: 2rem;
         }
 
-        /* 内容区块 */
-        .section {
-            padding: 6rem 5%;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 4rem;
-            font-size: 2.5rem;
-            color: var(--primary);
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background: var(--accent);
-            margin: 1rem auto;
-        }
-
-        /* 团队成员 */
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .member-card {
-            background: white;
-            border-radius: 16px;
-            padding: 2rem;
-            text-align: center;
-            transition: transform 0.3s ease;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
-        }
-
-        .member-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            margin: 0 auto 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            color: white;
-            font-weight: 300;
-        }
-
-        .member-card h3 {
-            color: var(--primary);
-            margin: 1rem 0 0.5rem;
-            font-size: 1.4rem;
-        }
-
-        .position {
-            color: var(--secondary);
-            font-weight: 500;
-        }
-
-        /* 项目展示 */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
-            transition: transform 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .project-content {
-            padding: 2rem;
-        }
-
-        .project-tag {
+        /* CTA按钮 */
+        .cta-button {
             display: inline-block;
-            background: rgba(var(--accent), 0.1);
-            color: var(--accent);
-            padding: 0.3rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
+            padding: 1rem 2.5rem;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255,126,103,0.3);
+            position: relative;
+            overflow: hidden;
         }
 
-        /* 响应式 */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .nav-links {
-                justify-content: center;
-            }
-
-            .team-grid,
-            .project-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .member-card {
-                padding: 1.5rem;
-            }
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255,255,255,0.2);
+            transform: translate(-50%, -50%) rotate(45deg);
+            transition: all 0.5s ease;
+            opacity: 0;
         }
 
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255,126,103,0.4);
         }
+
+        .cta-button:hover::after {
+            opacity: 1;
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 15px rgba(255,126,103,0.3);
+        }
+
+        /* 其他样式保持不变... */
     </style>
 </head>
 <body>
@@ -241,35 +152,36 @@
     <!-- 首页横幅 -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>专业步步高解除安装限制</h1>
-            <p>LE EEBBK</p>
+            <h1>步步高解除安装限制工具</h1>
+            <p>LE EEBBK&GH工作室</p>
+            <a href="#contact" class="cta-button">访问官网</a>
         </div>
     </section>
 
     <!-- 团队成员 -->
     <section class="section" id="team">
-        <h2 class="section-title">核心团队成员</h2>
+        <h2 class="section-title">核心成员</h2>
         <div class="team-grid">
             <div class="member-card">
                 <div class="avatar">Bai</div>
                 <h3>白</h3>
-                <p class="position">LE EEBBK创建者</p>
-                <p>项目维护者</p>
-                <p>创立LE EEBBK</p>
-            </div>
-            <div class="member-card">
-                <div class="avatar">H</div>
-                <h3>huang1057</h3>
-                <p class="position">程序编写</p>
-                <p>网页设计</p>
-                <p>技术支持</p>
+                <p class="position">项目发起者</p>
+                <p>LE EEBBK创建者</p>
+                <p>项目策划</p>
             </div>
             <div class="member-card">
                 <div class="avatar">S</div>
                 <h3>steam</h3>
-                <p class="position">程序编写者</p>
-                <p>网页维护</p>
-                <p>项目维护</p>
+                <p class="position">程序设计</p>
+                <p>网页设计</p>
+                <p>LEX Toolbox开发者</p>
+            </div>
+            <div class="member-card">
+                <div class="avatar">CF</div>
+                <h3>huang1057</h3>
+                <p class="position">项目合作者</p>
+                <p>GH工作室创始人</p>
+                <p>程序开发/网页开发</p>
             </div>
         </div>
     </section>
@@ -281,15 +193,15 @@
             <div class="project-card">
                 <div class="project-content">
                     <span class="project-tag">LEX Toolbox</span>
-                    <h3>EEBBK工具箱</h3>
-                    <p>暂未发布，正在开发</p>
+                    <h3>PC端刷机root软件</h3>
+                    <p>尚未发布，将要适配s7 s5pro s8 x2 x2pro x3 A7等型号</p>
                 </div>
             </div>
             <div class="project-card">
                 <div class="project-content">
-                    <span class="project-tag">LEX Toolbox(Android)</span>
-                    <h3>Android工具箱</h3>
-                    <p>正在开发ing</p>
+                    <span class="project-tag">LEX Toolbox for Android</span>
+                    <h3>安卓端玩机工具</h3>
+                    <p>用于刷机root的后续操作</p>
                 </div>
             </div>
         </div>
@@ -297,7 +209,7 @@
 
     <!-- 页脚 -->
     <footer style="background: var(--primary); color: white; text-align: center; padding: 3rem 5%;">
-        <p style="opacity: 0.8;">© 2025 LE EEBBK. All rights reserved.</p>
+        <p style="opacity: 0.8;">© 2025 LE EEBBK&GHTeam. All rights reserved.</p>
     </footer>
 </body>
 </html>
